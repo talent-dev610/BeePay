@@ -4,6 +4,7 @@ import { View, Text, StatusBar, TextInput } from 'react-native';
 import { StyleSheet } from 'react-native';
 import { TouchableOpacity } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import OTPInputView from '@twotalltotems/react-native-otp-input'
 
 
 export default function Passcode({ navigation, route }) {
@@ -13,17 +14,20 @@ export default function Passcode({ navigation, route }) {
             <StatusBar hidden={true} />
 
             <Text style={{ color: 'white', fontWeight: '500', fontSize: hp('2.4%'), marginTop: hp('20%') }}>Create Passcode</Text>
-            <TextInput style={styles.passwordBox} secureTextEntry={true} />
-            <Text style={{ color: 'gray', textAlign: 'center', width: wp('80%'), fontSize: hp('1.8%') }}>Add an extra layer of security when using the app</Text>
-            <TouchableOpacity
-                style={styles.buttonStyle}
-                onPress={() => {
+            {/* <TextInput style={styles.passwordBox} secureTextEntry={true} /> */}
+            <OTPInputView
+                pinCount={6}
+                autofillFromClipboard={false}
+                autoFocusOnLoad
+                codeInputFieldStyle={styles.underlineStyleBase}
+                onCodeFilled={(code) => {
+                    console.log(`Code is ${code}, you are good to go!`)
                     if (!ownWallet) navigation.navigate("Backup")
                     else navigation.navigate("ImportPhase")
                 }}
-            >
-                <Text style={{ color: 'white', alignSelf: 'center', fontSize: hp('2%') }}>Set Passcode</Text>
-            </TouchableOpacity>
+                style={{ width: wp('80%'), color: 'white', alignSelf: 'center', marginTop: hp('24%'), position: 'absolute' }}
+            />
+            <Text style={{ color: 'gray', textAlign: 'center', width: wp('80%'), marginTop: hp('10%'), fontSize: hp('1.8%') }}>Add an extra layer of security when using the app</Text>
         </View>
 
     )
@@ -59,10 +63,16 @@ const styles = StyleSheet.create({
         color: 'gray',
         alignSelf: 'center',
         width: wp('30%'),
-        marginVertical: hp('3%'),
+        marginVertical: hp('13%'),
         textAlign: 'center',
         borderRadius: 6,
         backgroundColor: '#222',
         paddingVertical: 8
-    }
+    },
+    underlineStyleBase: {
+        width: 30,
+        height: 45,
+        borderWidth: 0,
+        borderBottomWidth: 1,
+    },
 });

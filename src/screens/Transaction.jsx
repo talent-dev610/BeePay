@@ -54,7 +54,7 @@ export default function Transaction({ navigation }) {
 
             <View style={styles.transactionContainer}>
                 <TouchableOpacity
-                    // onPress={() => navigation.navigate("SendBpay")}
+                    onPress={() => navigation.navigate("SearchReceive", { activity: "send" })}
                     style={{ flexDirection: 'column', alignItems: 'center', gap: 8 }}
                 >
                     <LinearGradient
@@ -71,7 +71,7 @@ export default function Transaction({ navigation }) {
                     <Text style={{ color: 'white' }}>Send</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    // onPress={() => navigation.navigate("SearchReceive")}
+                    onPress={() => navigation.navigate("SearchReceive", { activity: "receive" })}
                     style={{ flexDirection: 'column', alignItems: 'center', gap: 8 }}
                 >
                     <LinearGradient
@@ -211,6 +211,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         marginTop: hp('2%'),
-        marginBottom: hp('4%')
+        marginBottom: hp('3.2%'),
+        overflow: 'scroll',
     }
 });
