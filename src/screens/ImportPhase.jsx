@@ -55,7 +55,7 @@ export default function ImportPhase({ navigation }) {
             </LinearGradient>
             <Text style={{ width: wp('85%'), color: 'white', marginVertical: hp('6%') }}>Typically 12 (sometimes 18, 24) words separated by single spaces</Text>
             <TouchableOpacity
-                onPress={() => navigation.navigate("ReceiveBpay")}
+                onPress={() => navigation.navigate("WalletScreen")}
             >
                 <LinearGradient
                     style={styles.importButton}

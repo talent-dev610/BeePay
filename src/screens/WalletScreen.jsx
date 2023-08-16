@@ -49,21 +49,27 @@ export default function WalletScreen({ navigation, route }) {
         <Text style={{ alignSelf: 'center', fontSize: 16, color: 'black' }}  >My wallet</Text>
 
         <View style={{ flexDirection: 'row', width: wp('65%'), alignSelf: 'center', justifyContent: 'space-between', marginTop: hp('3%') }}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("SearchReceive", { activity: "send" })}
+          >
             <View style={styles.labelContainer}>
               <Image source={uploadImage} style={{ width: 14 }} />
             </View>
             <Text style={{ alignSelf: 'center', marginTop: 4, textAlign: 'center', fontSize: 12 }}>Send</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("SearchReceive", { activity: "receive" })}
+          >
             <View style={styles.labelContainer}>
               <Image source={downloadImage} style={{ width: 14 }} />
             </View>
             <Text style={{ alignSelf: 'center', marginTop: 4, textAlign: 'center', fontSize: 12 }}>Receive</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity>
+          <TouchableOpacity
+          // onPress={() => navigation.navigate("SearchReceive")}
+          >
             <View style={styles.labelContainer}>
               <Image source={labelImage} style={{ width: 20 }} />
             </View>
@@ -87,7 +93,9 @@ export default function WalletScreen({ navigation, route }) {
           </View>
 
           <View style={{ borderBottomColor: 'yellow', borderBottomWidth: 1, flexDirection: 'column', height: hp('47%'), justifyContent: 'space-between', paddingBottom: 12 }}>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 10, alignItems: 'center' }}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Transaction")}
+              style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 10, alignItems: 'center' }}>
               <Image source={BUSDImage} style={{ flex: 1, width: wp('11%'), height: wp('11%') }} resizeMode='contain' />
               <View style={styles.mainBox}>
                 <View style={{ marginLeft: 12, flex: 1 }} >
@@ -102,9 +110,11 @@ export default function WalletScreen({ navigation, route }) {
                   <Text style={{ color: 'gray', marginTop: 4, fontSize: 12, fontWeight: '900' }}>$1,001</Text>
                 </View>
               </View>
-            </View>
+            </TouchableOpacity>
 
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 2, alignItems: 'center' }}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Transaction")}
+              style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 2, alignItems: 'center' }}>
               <Image source={BitcoinImage} style={{ flex: 1, width: wp('11%'), height: wp('11%') }} resizeMode='contain' />
               <View style={{ flex: 5, flexDirection: 'row', justifyContent: 'space-between', borderBottomColor: 'yellow', borderBottomWidth: 1, marginLeft: 12, paddingBottom: 10 }}>
                 <View style={{ marginLeft: 12, flex: 1 }} >
@@ -119,9 +129,11 @@ export default function WalletScreen({ navigation, route }) {
                   <Text style={{ color: 'gray', marginTop: 4, fontSize: 12, fontWeight: '900' }}>$4,000</Text>
                 </View>
               </View>
-            </View>
+            </TouchableOpacity>
 
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 2, alignItems: 'center' }}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Transaction")}
+              style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 2, alignItems: 'center' }}>
               <Image source={EthereumImage} style={{ flex: 1, width: wp('11%'), height: wp('11%') }} resizeMode='contain' />
               <View style={{ flex: 5, flexDirection: 'row', justifyContent: 'space-between', borderBottomColor: 'yellow', borderBottomWidth: 1, marginLeft: 12, paddingBottom: 10 }}>
                 <View style={{ marginLeft: 12, flex: 1 }} >
@@ -136,9 +148,11 @@ export default function WalletScreen({ navigation, route }) {
                   <Text style={{ color: 'gray', marginTop: 4, fontSize: 12, fontWeight: '900' }}>$1,530</Text>
                 </View>
               </View>
-            </View>
+            </TouchableOpacity>
 
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 2, alignItems: 'center' }}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Transaction")}
+              style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 2, alignItems: 'center' }}>
               <Image source={XrpImage} style={{ flex: 1, width: wp('11%'), height: wp('11%') }} resizeMode='contain' />
               <View style={{ flex: 5, flexDirection: 'row', justifyContent: 'space-between', borderBottomColor: 'yellow', borderBottomWidth: 1, marginLeft: 12, paddingBottom: 10 }}>
                 <View style={{ marginLeft: 12, flex: 1 }} >
@@ -153,9 +167,11 @@ export default function WalletScreen({ navigation, route }) {
                   <Text style={{ color: 'gray', marginTop: 4, fontSize: 12, fontWeight: '900' }}>$393.20</Text>
                 </View>
               </View>
-            </View>
+            </TouchableOpacity>
 
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 2, alignItems: 'center' }}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Transaction")}
+              style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 2, alignItems: 'center' }}>
               <Image source={BnbImage} style={{ flex: 1, width: wp('11%'), height: wp('11%') }} resizeMode='contain' />
               <View style={{ flex: 5, flexDirection: 'row', justifyContent: 'space-between', marginLeft: 12, paddingBottom: 2 }}>
                 <View style={{ marginLeft: 12, flex: 1 }} >
@@ -170,7 +186,7 @@ export default function WalletScreen({ navigation, route }) {
                   <Text style={{ color: 'gray', marginTop: 4, fontSize: 12, fontWeight: '900' }}>$3034</Text>
                 </View>
               </View>
-            </View>
+            </TouchableOpacity>
 
           </View>
 

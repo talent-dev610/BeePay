@@ -23,7 +23,7 @@ export default function Backup({ navigation }) {
           Never share it!
         </Text>
         <TouchableOpacity
-          onPress={() => navigation.navigate("SecretPhrase")}
+        // onPress={() => navigation.navigate("SecretPhrase")}
         >
           <LinearGradient
             style={styles.settingPad2}
@@ -38,7 +38,7 @@ export default function Backup({ navigation }) {
           </LinearGradient>
         </TouchableOpacity>
 
-        <TouchableOpacity style={{ marginTop: hp('3%') }} onPress={() => navigation.navigate("Passcode")}>
+        <TouchableOpacity style={{ marginTop: hp('3%') }} onPress={() => navigation.navigate("Agreement")}>
           <Text style={{ color: '#888', fontWeight: '500' }}>Back up to manually</Text>
         </TouchableOpacity>
 

@@ -82,7 +82,7 @@ export default function Agreement({ navigation }) {
           <Text style={{ color: 'black', fontSize: hp('1.9%'), fontWeight: '400', alignSelf: 'center' }}> I agree with Crocisive Privacy Policy</Text>
         </View>
 
-        <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate("Backup")}>
+        <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate("SecretPhrase")}>
           <Text style={{ alignSelf: 'center', color: 'white', fontSize: hp('2.5%'), fontWeight: '900' }}>Continue</Text>
         </TouchableOpacity>
       </LinearGradient>

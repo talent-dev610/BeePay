@@ -63,7 +63,7 @@ export default function HomeScreen({ navigation }) {
                         <Text style={{ color: '#888', width: wp('40%') }}>Create a new multi-chain wallet</Text>
                     </View>
                     <TouchableOpacity
-                        onPress={() => navigation.navigate("BoardScreen")}
+                        onPress={() => navigation.navigate("Passcode", { ownWallet: false })}
                     >
                         <Image source={nextIcon} />
                     </TouchableOpacity>
@@ -89,10 +89,14 @@ export default function HomeScreen({ navigation }) {
                         </View>
                     </LinearGradient>
                     <View style={{ flexDirection: 'column' }}>
-                        <Text style={{ color: '#BF8122' }}>I don't have a wallet</Text>
+                        <Text style={{ color: '#BF8122' }}>I already have a wallet</Text>
                         <Text style={{ color: '#888', width: wp('40%') }}>Create a new multi-chain wallet</Text>
                     </View>
-                    <Image source={nextIcon} />
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate("Passcode", { ownWallet: true })}
+                    >
+                        <Image source={nextIcon} />
+                    </TouchableOpacity>
                 </View>
             </LinearGradient>
             <View style={styles.bottomNav}>

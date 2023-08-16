@@ -15,8 +15,16 @@ const AeternityIcon = require("../../assets/coin/aeternity.png");
 const AionIcon = require("../../assets/coin/aion.png");
 const AlgorandIcon = require("../../assets/coin/algorand.png");
 
-export default function SearchReceive({ navigation }) {
+export default function SearchReceive({ navigation, route }) {
 
+    const activity = route.params.activity;
+    console.log(activity)
+
+    const gotoNextScreen = () => {
+        console.log(activity)
+        if (activity == "send") navigation.navigate("SendBpay");
+        else navigation.navigate("ReceiveBpay");
+    }
     return (
         <View style={styles.container}>
             <StatusBar hidden={true} />
@@ -31,62 +39,79 @@ export default function SearchReceive({ navigation }) {
                 </View>
             </View>
 
-            <View style={styles.coinItem}>
+            <TouchableOpacity
+                onPress={() => gotoNextScreen()}
+                style={styles.coinItem}>
                 <Image source={BNBIcon} />
                 <View style={styles.itemRight}>
                     <Text style={{ color: 'white', fontSize: 18 }}>BNB Beacon Chain</Text>
                     <Text style={{ color: 'white', fontSize: 18 }}>0</Text>
                 </View>
-            </View>
-            <View style={styles.coinItem}>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => gotoNextScreen()}
+                style={styles.coinItem}>
                 <Image source={bitcoinIcon} />
                 <View style={styles.itemRight}>
                     <Text style={{ color: 'white', fontSize: 18 }}>Bitcoin</Text>
                     <Text style={{ color: 'white', fontSize: 18 }}>0</Text>
                 </View>
-            </View>
-            <View style={styles.coinItem}>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => gotoNextScreen()}
+                style={styles.coinItem}>
                 <Image source={EthereumIcon} />
                 <View style={styles.itemRight}>
                     <Text style={{ color: 'white', fontSize: 18 }}>Ethereum</Text>
                     <Text style={{ color: 'white', fontSize: 18 }}>0</Text>
                 </View>
-            </View>
-            <View style={styles.coinItem}>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => gotoNextScreen()}
+                style={styles.coinItem}>
                 <Image source={BNBIcon} />
                 <View style={styles.itemRight}>
                     <Text style={{ color: 'white', fontSize: 18 }}>BNB Smart Chain</Text>
                     <Text style={{ color: 'white', fontSize: 18 }}>0</Text>
                 </View>
-            </View>
-            <View style={styles.coinItem}>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => gotoNextScreen()}
+                style={styles.coinItem}>
                 <Image source={trustWalletIcon} />
                 <View style={styles.itemRight}>
                     <Text style={{ color: 'white', fontSize: 18 }}>Trust Wallet</Text>
                     <Text style={{ color: 'white', fontSize: 18 }}>0</Text>
                 </View>
-            </View>
-            <View style={styles.coinItem}>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => gotoNextScreen()}
+
+                style={styles.coinItem}>
                 <Image source={AeternityIcon} />
                 <View style={styles.itemRight}>
                     <Text style={{ color: 'white', fontSize: 18 }}>Aeternity</Text>
                     <Text style={{ color: 'white', fontSize: 18 }}>0</Text>
                 </View>
-            </View>
-            <View style={styles.coinItem}>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => gotoNextScreen()}
+                style={styles.coinItem}>
                 <Image source={AionIcon} />
                 <View style={styles.itemRight}>
                     <Text style={{ color: 'white', fontSize: 18 }}>Aion</Text>
                     <Text style={{ color: 'white', fontSize: 18 }}>0</Text>
                 </View>
-            </View>
-            <View style={styles.coinItem}>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => gotoNextScreen()}
+                style={styles.coinItem}>
                 <Image source={AlgorandIcon} />
                 <View style={styles.itemRight}>
                     <Text style={{ color: 'white', fontSize: 18 }}>Algorand</Text>
                     <Text style={{ color: 'white', fontSize: 18 }}>0</Text>
                 </View>
-            </View>
+            </TouchableOpacity>
         </View >
     );
 }

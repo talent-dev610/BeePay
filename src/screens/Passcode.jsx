@@ -6,8 +6,8 @@ import { TouchableOpacity } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 
-export default function Passcode({ navigation }) {
-
+export default function Passcode({ navigation, route }) {
+    const ownWallet = route.params.ownWallet;
     return (
         <View style={styles.container}>
             <StatusBar hidden={true} />
@@ -17,7 +17,10 @@ export default function Passcode({ navigation }) {
             <Text style={{ color: 'gray', textAlign: 'center', width: wp('80%'), fontSize: hp('1.8%') }}>Add an extra layer of security when using the app</Text>
             <TouchableOpacity
                 style={styles.buttonStyle}
-                onPress={() => navigation.navigate("ImportPhase")}
+                onPress={() => {
+                    if (!ownWallet) navigation.navigate("Backup")
+                    else navigation.navigate("ImportPhase")
+                }}
             >
                 <Text style={{ color: 'white', alignSelf: 'center', fontSize: hp('2%') }}>Set Passcode</Text>
             </TouchableOpacity>

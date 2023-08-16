@@ -62,7 +62,7 @@ export default function Verify({ navigation }) {
                 </View>
             </View>
             <TouchableOpacity
-                onPress={() => navigation.navigate("Passcode")}
+                onPress={() => navigation.navigate("WalletScreen")}
             >
                 <LinearGradient
                     style={styles.settingPad2}
