@@ -24,7 +24,9 @@ import Transaction from "./src/screens/Transaction";
 import ImportPhase from "./src/screens/ImportPhase";
 import ReceiveBpay from "./src/screens/ReceiveBpay";
 import SearchReceive from "./src/screens/SearchReceive";
-
+import AddToken from './src/screens/AddToken';
+import TokenList from './src/screens/TokenList';
+import TokenNetwork from './src/screens/TokenNetwork';
 
 const Stack = createStackNavigator();
 
@@ -47,6 +49,9 @@ export default function App() {
         <Stack.Screen name='ImportPhase' component={ImportPhase} />
         <Stack.Screen name='ReceiveBpay' component={ReceiveBpay} />
         <Stack.Screen name='SearchReceive' component={SearchReceive} />
+        <Stack.Screen name='AddToken' component={AddToken} />
+        <Stack.Screen name='TokenList' component={TokenList} />
+        <Stack.Screen name='TokenNetwork' component={TokenNetwork} />
         <Stack.Screen name="Passcode" component={Passcode}
           options={{
             headerTitleAlign: 'center',

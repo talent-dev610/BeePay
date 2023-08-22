@@ -21,7 +21,7 @@ export default function Passcode({ navigation, route }) {
                 autoFocusOnLoad
                 codeInputFieldStyle={styles.underlineStyleBase}
                 onCodeFilled={(code) => {
-                    console.log(`Code is ${code}, you are good to go!`)
+                    console.log(`Code is ${code}`)
                     if (!ownWallet) navigation.navigate("Backup")
                     else navigation.navigate("ImportPhase")
                 }}
