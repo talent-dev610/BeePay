@@ -30,6 +30,16 @@ const DiscoverIcon = require("../../assets/discover.png");
 const BrowserIcon = require("../../assets/browser.png");
 const SettingIcon = require("../../assets/settings.png");
 
+const backIcon = require("../../assets/backIcon.png");
+const BNBIcon = require("../../assets/coin/bnb.png");
+const bitcoinIcon = require("../../assets/coin/bitcoin.png");
+const EthereumIcon = require("../../assets/coin/ethereum.png");
+const trustWalletIcon = require("../../assets/coin/trustwallet.png");
+const AeternityIcon = require("../../assets/coin/aeternity.png");
+const AionIcon = require("../../assets/coin/aion.png");
+const AlgorandIcon = require("../../assets/coin/algorand.png");
+
+
 export default function AddToken({ navigation, route }) {
 
   const [activityShow, setActivityShow] = useState(true)
@@ -55,7 +65,9 @@ export default function AddToken({ navigation, route }) {
           <TouchableOpacity >
             <Image source={bellImage} width={24} />
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("TokenList")}
+          >
             <Image source={tradeImage} width={24} />
           </TouchableOpacity>
         </View>
@@ -213,17 +225,17 @@ export default function AddToken({ navigation, route }) {
               <TouchableOpacity
                 onPress={() => navigation.navigate("Transaction")}
                 style={styles.tokenItem}>
-                <Image source={BnbImage} style={{ flex: 1, width: wp('11%'), height: wp('11%') }} resizeMode='contain' />
+                <Image source={trustWalletIcon} style={{ flex: 1, width: wp('11%'), height: wp('11%') }} resizeMode='contain' />
                 <View style={styles.mainBox}>
                   <View style={{ marginLeft: 12, flex: 1 }} >
-                    <Text style={{ color: 'white', fontSize: 13 }}>BNB</Text>
+                    <Text style={{ color: 'white', fontSize: 13 }}>TWT</Text>
                     <View style={{ flexDirection: 'row', marginTop: 4 }}>
                       <Text style={{ color: 'white', fontSize: 12 }} >10</Text>
                       <Text style={{ fontSize: 12, color: 'red', marginLeft: 4, fontWeight: '700' }}>- 0.77%</Text>
                     </View>
                   </View>
                   <View style={{ flexDirection: 'column', flex: 1 }}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>BNB</Text>
+                    <Text style={{ color: 'white', fontSize: 13 }}>TWT</Text>
                     <Text style={{ color: 'gray', marginTop: 4, fontSize: 12, fontWeight: '900' }}>$3034</Text>
                   </View>
                 </View>
@@ -232,17 +244,17 @@ export default function AddToken({ navigation, route }) {
               <TouchableOpacity
                 onPress={() => navigation.navigate("Transaction")}
                 style={styles.tokenItem}>
-                <Image source={BnbImage} style={{ flex: 1, width: wp('11%'), height: wp('11%') }} resizeMode='contain' />
+                <Image source={AeternityIcon} style={{ flex: 1, width: wp('11%'), height: wp('11%') }} resizeMode='contain' />
                 <View style={styles.mainBox}>
                   <View style={{ marginLeft: 12, flex: 1 }} >
-                    <Text style={{ color: 'white', fontSize: 13 }}>BNB</Text>
+                    <Text style={{ color: 'white', fontSize: 13 }}>Aeternity</Text>
                     <View style={{ flexDirection: 'row', marginTop: 4 }}>
-                      <Text style={{ color: 'white', fontSize: 12 }} >10</Text>
+                      <Text style={{ color: 'white', fontSize: 12 }} >13</Text>
                       <Text style={{ fontSize: 12, color: 'red', marginLeft: 4, fontWeight: '700' }}>- 0.77%</Text>
                     </View>
                   </View>
                   <View style={{ flexDirection: 'column', flex: 1 }}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>BNB</Text>
+                    <Text style={{ color: 'white', fontSize: 13 }}>AE</Text>
                     <Text style={{ color: 'gray', marginTop: 4, fontSize: 12, fontWeight: '900' }}>$3034</Text>
                   </View>
                 </View>
@@ -251,18 +263,18 @@ export default function AddToken({ navigation, route }) {
               <TouchableOpacity
                 onPress={() => navigation.navigate("Transaction")}
                 style={styles.tokenItem}>
-                <Image source={BnbImage} style={{ flex: 1, width: wp('11%'), height: wp('11%') }} resizeMode='contain' />
+                <Image source={AionIcon} style={{ flex: 1, width: wp('11%'), height: wp('11%') }} resizeMode='contain' />
                 <View style={styles.mainBox}>
                   <View style={{ marginLeft: 12, flex: 1 }} >
-                    <Text style={{ color: 'white', fontSize: 13 }}>BNB</Text>
+                    <Text style={{ color: 'white', fontSize: 13 }}>Aion</Text>
                     <View style={{ flexDirection: 'row', marginTop: 4 }}>
-                      <Text style={{ color: 'white', fontSize: 12 }} >10</Text>
-                      <Text style={{ fontSize: 12, color: 'red', marginLeft: 4, fontWeight: '700' }}>- 0.77%</Text>
+                      <Text style={{ color: 'white', fontSize: 12 }} >43</Text>
+                      <Text style={{ fontSize: 12, color: 'red', marginLeft: 4, fontWeight: '700' }}>- 0.92%</Text>
                     </View>
                   </View>
                   <View style={{ flexDirection: 'column', flex: 1 }}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>BNB</Text>
-                    <Text style={{ color: 'gray', marginTop: 4, fontSize: 12, fontWeight: '900' }}>$3034</Text>
+                    <Text style={{ color: 'white', fontSize: 13 }}>Aion</Text>
+                    <Text style={{ color: 'gray', marginTop: 4, fontSize: 12, fontWeight: '900' }}>$2014</Text>
                   </View>
                 </View>
               </TouchableOpacity>
@@ -279,7 +291,7 @@ export default function AddToken({ navigation, route }) {
                   locations={[0, 0.048, 0.085, 0.1201, 0.19, 0.27, 0.37, 0.38, 0.78, 1]}
                 >
                   <View style={styles.innerGradient}>
-                    <Text style={{ alignSelf: 'center', color: '#888', fontSize: 18 }}>Add Custom Token</Text>
+                    <Text style={{ alignSelf: 'center', color: '#888', fontSize: 18 }}>Add Token</Text>
                   </View>
                 </LinearGradient>
               </TouchableOpacity>
