@@ -1,20 +1,12 @@
-
 import * as React from 'react';
-import { View, Text, StatusBar } from 'react-native';
+import { View, Text, StatusBar, TextInput } from 'react-native';
 import { StyleSheet } from 'react-native';
 import { Image } from 'react-native';
 import { TouchableOpacity } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { useState } from 'react';
 import { LinearGradient } from "expo-linear-gradient";
-import { TextInput } from 'react-native-gesture-handler';
-
-
-const BeeIcon = require("../../assets/icon_1.png");
-const SwapIcon = require("../../assets/swap.png");
-const DiscoverIcon = require("../../assets/discover.png");
-const BrowserIcon = require("../../assets/browser.png");
-const SettingIcon = require("../../assets/settings.png");
+import BottomNav from "../component/BottomNav";
 
 const backIcon = require("../../assets/backIcon.png");
 const minuseIcon = require("../../assets/minuse.png");
@@ -37,12 +29,12 @@ export default function TokenNetwork({ navigation }) {
                     <TouchableOpacity
                         onPress={() => setTokenShow(true)}
                     >
-                        <Text style={{ color: 'white', borderBottomColor: '#D98F26', borderBottomWidth: 2 }}>Token</Text>
+                        <Text style={[styles.text, tokenShow && styles.visibleTokenText]}>Token</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         onPress={() => setTokenShow(false)}
                     >
-                        <Text style={{ color: 'white', borderBottomColor: '#D98F26', borderBottomWidth: 2 }}>Network</Text>
+                        <Text style={[styles.text, !tokenShow && styles.visibleTokenText]}>Network</Text>
                     </TouchableOpacity>
                 </View>
                 <TouchableOpacity>
@@ -222,28 +214,7 @@ export default function TokenNetwork({ navigation }) {
                 </LinearGradient>
             </TouchableOpacity>
 
-            <View style={styles.bottomNav}>
-                <TouchableOpacity style={styles.tabItem}>
-                    <Image source={BeeIcon} style={{ width: 30, height: 30 }} />
-                    <Text style={{ color: '#BF8122' }}> Wallet</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.tabItem}>
-                    <Image source={SwapIcon} style={{ width: 20, height: 20 }} />
-                    <Text style={{ color: '#fff' }}> Swap</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.tabItem}>
-                    <Image source={DiscoverIcon} style={{ width: 20, height: 20 }} />
-                    <Text style={{ color: '#fff' }}> Discover</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.tabItem}>
-                    <Image source={BrowserIcon} style={{ width: 20, height: 20 }} />
-                    <Text style={{ color: '#fff' }}> Browser</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.tabItem}>
-                    <Image source={SettingIcon} style={{ width: 20, height: 20 }} />
-                    <Text style={{ color: '#fff' }}> Settings</Text>
-                </TouchableOpacity>
-            </View>
+            <BottomNav />
         </View>
     );
 }
@@ -253,11 +224,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#000',
         alignItems: 'center'
-    },
-    logo: {
-        width: wp('18%'),
-        height: wp('18%'),
-        marginTop: hp('13%'),
     },
     netPad: {
         width: wp('41%'),
@@ -292,21 +258,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         gap: 10
     },
-    custombutton: {
-        width: '100%',
-        paddingVertical: 10,
-        borderRadius: 8,
-        textAlign: 'center',
-        backgroundColor: 'black',
-        marginVertical: hp('1.6%')
-    },
-    imageBackgorund: {
-        flex: 1,
-        justifyContent: 'center',
-        width: wp('100%'),
-        height: hp('100%'),
-        position: 'absolute'
-    },
     innerGradient: {
         backgroundColor: '#000',
         width: '100%',
@@ -317,38 +268,6 @@ const styles = StyleSheet.create({
         padding: wp('5%'),
         color: 'white',
         position: 'relative'
-    },
-    circlePlus: {
-        width: 40,
-        height: 40,
-        borderRadius: 20,
-        padding: 2
-    },
-    innerCircle: {
-        backgroundColor: '#000',
-        width: '100%',
-        height: '100%',
-        borderRadius: 16,
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
-        alignItems: 'center'
-    },
-    bottomNav: {
-        width: wp('100%'),
-        height: hp('10%'),
-        borderTopColor: '#BF8122',
-        borderTopWidth: 1,
-        marginTop: hp('90%'),
-        position: 'absolute',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        paddingHorizontal: wp('5%'),
-        alignItems: 'flex-end',
-        paddingBottom: 10
-    },
-    tabItem: {
-        flexDirection: 'column',
-        alignItems: 'center',
     },
     topNavContainer: {
         width: wp('100%'),
@@ -366,5 +285,12 @@ const styles = StyleSheet.create({
         height: '100%',
         backgroundColor: 'black',
         borderRadius: 5
+    },
+    text: {
+        color: 'white'
+    },
+    visibleTokenText: {
+        borderBottomColor: '#D98F26',
+        borderBottomWidth: 2
     }
 });

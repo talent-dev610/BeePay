@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Text, View, StatusBar } from 'react-native'
 import { LinearGradient } from "expo-linear-gradient";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { Image } from 'react-native';
 import { TouchableOpacity } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-
+import BottomNav from "../component/BottomNav";
 
 const BUSDImage = require("../../assets/BUSD.png");
 const BitcoinImage = require("../../assets/Bitcoin.png");
@@ -19,25 +19,9 @@ const labelImage = require("../../assets/label.png");
 const exchangeImage = require("../../assets/exchange.png");
 const uploadImage = require("../../assets/upload.png");
 const downloadImage = require("../../assets/download.png");
-const cameraImage = require("../../assets/camera.png");
-const infoImage = require("../../assets/info.png");
-const cobImage = require("../../assets/cob.png");
-
-const logoImage = require("../../assets/logo.png");
-const BeeIcon = require("../../assets/icon_1.png");
-const SwapIcon = require("../../assets/swap.png");
-const DiscoverIcon = require("../../assets/discover.png");
-const BrowserIcon = require("../../assets/browser.png");
-const SettingIcon = require("../../assets/settings.png");
-
-const backIcon = require("../../assets/backIcon.png");
-const BNBIcon = require("../../assets/coin/bnb.png");
-const bitcoinIcon = require("../../assets/coin/bitcoin.png");
-const EthereumIcon = require("../../assets/coin/ethereum.png");
 const trustWalletIcon = require("../../assets/coin/trustwallet.png");
 const AeternityIcon = require("../../assets/coin/aeternity.png");
 const AionIcon = require("../../assets/coin/aion.png");
-const AlgorandIcon = require("../../assets/coin/algorand.png");
 
 
 export default function AddToken({ navigation, route }) {
@@ -72,49 +56,49 @@ export default function AddToken({ navigation, route }) {
           </TouchableOpacity>
         </View>
 
-        <Text style={{ alignSelf: 'center', fontSize: 26, color: 'black', fontWeight: '600' }}  >$9,958.20</Text>
-        <Text style={{ alignSelf: 'center', fontSize: 16, color: 'black' }}  >My wallet</Text>
+        <Text style={{ alignSelf: 'center', fontSize: hp('4.5%'), color: 'black', fontWeight: '600' }}  >$9,958.20</Text>
+        <Text style={{ alignSelf: 'center', fontSize: hp('2.5%'), color: 'black' }}  >My wallet</Text>
 
-        {activityShow && <View style={{ flexDirection: 'row', width: wp('65%'), alignSelf: 'center', justifyContent: 'space-between', marginTop: hp('3%') }}>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("SearchReceive", { activity: "send" })}
-          >
-            <View style={styles.labelContainer}>
-              <Image source={uploadImage} style={{ width: 14 }} />
-            </View>
-            <Text style={{ alignSelf: 'center', marginTop: 4, textAlign: 'center', fontSize: 12 }}>Send</Text>
-          </TouchableOpacity>
+        {activityShow &&
+          <View style={{ flexDirection: 'row', width: wp('65%'), alignSelf: 'center', justifyContent: 'space-between', marginTop: hp('3%') }}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("SearchReceive", { activity: "send" })}
+            >
+              <View style={styles.labelContainer}>
+                <Image source={uploadImage} style={{ width: 14 }} />
+              </View>
+              <Text style={styles.iconText}>Send</Text>
+            </TouchableOpacity>
 
-          <TouchableOpacity
-            onPress={() => navigation.navigate("SearchReceive", { activity: "receive" })}
-          >
-            <View style={styles.labelContainer}>
-              <Image source={downloadImage} style={{ width: 14 }} />
-            </View>
-            <Text style={{ alignSelf: 'center', marginTop: 4, textAlign: 'center', fontSize: 12 }}>Receive</Text>
-          </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("SearchReceive", { activity: "receive" })}
+            >
+              <View style={styles.labelContainer}>
+                <Image source={downloadImage} style={{ width: 14 }} />
+              </View>
+              <Text style={styles.iconText}>Receive</Text>
+            </TouchableOpacity>
 
-          <TouchableOpacity>
-            <View style={styles.labelContainer}>
-              <Image source={labelImage} style={{ width: 20 }} />
-            </View>
-            <Text style={{ alignSelf: 'center', marginTop: 4, textAlign: 'center', fontSize: 12 }}>Buy</Text>
-          </TouchableOpacity>
+            <TouchableOpacity>
+              <View style={styles.labelContainer}>
+                <Image source={labelImage} style={{ width: 20 }} />
+              </View>
+              <Text style={styles.iconText}>Buy</Text>
+            </TouchableOpacity>
 
-          <TouchableOpacity>
-            <View style={styles.labelContainer}>
-              <Image source={exchangeImage} style={{ width: 20 }} />
-            </View>
-            <Text style={{ alignSelf: 'center', marginTop: 4, textAlign: 'center', fontSize: 12 }}>Trade</Text>
-          </TouchableOpacity>
-
-        </View>
+            <TouchableOpacity>
+              <View style={styles.labelContainer}>
+                <Image source={exchangeImage} style={{ width: 20 }} />
+              </View>
+              <Text style={styles.iconText}>Trade</Text>
+            </TouchableOpacity>
+          </View>
         }
 
         <View style={styles.walletPad} >
           <View style={styles.coinPad} >
-            <Text style={{ fontSize: 16, color: 'white' }} >Tokens</Text>
-            <Text style={{ fontSize: 16, color: 'white' }}>NFTs</Text>
+            <Text style={{ fontSize: hp('2.5%'), color: 'white' }} >Tokens</Text>
+            <Text style={{ fontSize: hp('2.5%'), color: 'white' }}>NFTs</Text>
           </View>
 
           <View style={{ width: wp('100%'), height: hp('60%'), paddingBottom: hp('10%') }}>
@@ -298,28 +282,7 @@ export default function AddToken({ navigation, route }) {
             </ScrollView>
           </View>
         </View>
-        <View style={styles.bottomNav}>
-          <TouchableOpacity style={styles.tabItem}>
-            <Image source={BeeIcon} style={{ width: 30, height: 30 }} />
-            <Text style={{ color: '#BF8122' }}> Wallet</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.tabItem}>
-            <Image source={SwapIcon} style={{ width: 20, height: 20 }} />
-            <Text style={{ color: '#fff' }}> Swap</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.tabItem}>
-            <Image source={DiscoverIcon} style={{ width: 20, height: 20 }} />
-            <Text style={{ color: '#fff' }}> Discover</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.tabItem}>
-            <Image source={BrowserIcon} style={{ width: 20, height: 20 }} />
-            <Text style={{ color: '#fff' }}> Browser</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.tabItem}>
-            <Image source={SettingIcon} style={{ width: 20, height: 20 }} />
-            <Text style={{ color: '#fff' }}> Settings</Text>
-          </TouchableOpacity>
-        </View>
+        <BottomNav />
       </LinearGradient>
     </View>
   )
@@ -334,18 +297,15 @@ const styles = StyleSheet.create({
   settingPad: {
     width: wp('100%'),
     height: hp('100%'),
-    flex: 1,
     backgroundColor: '#fff',
   },
-
   walletPad: {
     width: wp('100%'),
     backgroundColor: 'black',
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
-    marginTop: hp('10%')
+    marginTop: hp('9%')
   },
-
   coinPad: {
     width: wp('100%'),
     flexDirection: 'row',
@@ -357,8 +317,8 @@ const styles = StyleSheet.create({
   },
 
   labelContainer: {
-    width: 45,
-    height: 45,
+    width: hp('6.5%'),
+    height: hp('6.5%'),
     borderRadius: 40,
     backgroundColor: '#ddd',
     alignItems: 'center',
@@ -382,25 +342,7 @@ const styles = StyleSheet.create({
     marginTop: hp('3%'),
     height: hp('3%')
   },
-  bottomNav: {
-    width: wp('100%'),
-    height: hp('10%'),
-    borderTopColor: '#BF8122',
-    borderTopWidth: 1,
-    marginTop: hp('90%'),
-    position: 'absolute',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: wp('5%'),
-    alignItems: 'flex-end',
-    paddingBottom: 10,
-    zIndex: 99999,
-    backgroundColor: 'black'
-  },
-  tabItem: {
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
+
   tokenItem: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -430,6 +372,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  iconText: {
+    alignSelf: 'center',
+    marginTop: 4,
+    textAlign: 'center',
+    fontSize: hp('2%')
   }
 
 })

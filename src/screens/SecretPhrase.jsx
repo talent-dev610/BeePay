@@ -138,28 +138,12 @@ const styles = StyleSheet.create({
     paddingBottom: 6,
     marginTop: 12
   },
-  buttonStyle: {
-    borderRadius: 12,
-    backgroundColor: '#55A1EE',
-    paddingVertical: 12,
-    alignItems: 'center',
-    width: '90%',
-    marginVertical: hp('2%')
-  },
   settingPad2: {
     width: wp('80%'),
     height: hp('6%'),
     borderRadius: 5,
     padding: 1,
     marginVertical: hp('2%')
-  },
-  ContainerHeader: {
-    position: 'absolute',
-    marginLeft: 30,
-    marginTop: -hp('1.5%'),
-    color: 'white',
-    zIndex: 999,
-    backgroundColor: 'black'
   },
   innerGradient: {
     backgroundColor: '#000',

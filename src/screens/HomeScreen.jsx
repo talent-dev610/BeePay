@@ -5,28 +5,17 @@ import { StyleSheet, ImageBackground } from 'react-native';
 import { Image } from 'react-native';
 import { TouchableOpacity } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import Checkbox from 'expo-checkbox';
 import { useState } from 'react';
 import { LinearGradient } from "expo-linear-gradient";
 import GradientText from '../component/GradientText';
-import BoardScreen from './BoardScreen';
+import BottomNav from "../component/BottomNav"
 
 const logoImage = require("../../assets/logo.png");
 const backgroundImage = require("../../assets/back2.png");
 const nextIcon = require("../../assets/nextIcon.png");
 const downIcon = require("../../assets/downIcon.png");
-const BeeIcon = require("../../assets/icon_1.png");
-const SwapIcon = require("../../assets/swap.png");
-const DiscoverIcon = require("../../assets/discover.png");
-const BrowserIcon = require("../../assets/browser.png");
-const SettingIcon = require("../../assets/settings.png");
 
 export default function HomeScreen({ navigation }) {
-    const [checked, setChecked] = useState(false);
-
-    const handlePress = () => {
-        setChecked(!checked);
-    };
     return (
         <View style={styles.container}>
             <StatusBar hidden={true} />
@@ -99,28 +88,7 @@ export default function HomeScreen({ navigation }) {
                     </TouchableOpacity>
                 </View>
             </LinearGradient>
-            <View style={styles.bottomNav}>
-                <View style={styles.tabItem}>
-                    <Image source={BeeIcon} style={{ width: 30, height: 30 }} />
-                    <Text style={{ color: '#BF8122' }}> Wallet</Text>
-                </View>
-                <View style={styles.tabItem}>
-                    <Image source={SwapIcon} style={{ width: 20, height: 20 }} />
-                    <Text style={{ color: '#fff' }}> Swap</Text>
-                </View>
-                <View style={styles.tabItem}>
-                    <Image source={DiscoverIcon} style={{ width: 20, height: 20 }} />
-                    <Text style={{ color: '#fff' }}> Discover</Text>
-                </View>
-                <View style={styles.tabItem}>
-                    <Image source={BrowserIcon} style={{ width: 20, height: 20 }} />
-                    <Text style={{ color: '#fff' }}> Browser</Text>
-                </View>
-                <View style={styles.tabItem}>
-                    <Image source={SettingIcon} style={{ width: 20, height: 20 }} />
-                    <Text style={{ color: '#fff' }}> Settings</Text>
-                </View>
-            </View>
+            <BottomNav />
         </View>
     );
 }
@@ -182,22 +150,5 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-evenly',
         alignItems: 'center'
-    },
-    bottomNav: {
-        width: wp('100%'),
-        height: hp('10%'),
-        borderTopColor: '#BF8122',
-        borderTopWidth: 1,
-        marginTop: hp('90%'),
-        position: 'absolute',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        paddingHorizontal: wp('5%'),
-        alignItems: 'flex-end',
-        paddingBottom: 10
-    },
-    tabItem: {
-        flexDirection: 'column',
-        alignItems: 'center',
     }
 });

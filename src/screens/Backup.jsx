@@ -23,7 +23,6 @@ export default function Backup({ navigation }) {
           Never share it!
         </Text>
         <TouchableOpacity
-        // onPress={() => navigation.navigate("SecretPhrase")}
         >
           <LinearGradient
             style={styles.settingPad2}
@@ -53,28 +52,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     alignItems: 'center'
   },
-  buttonStyle: {
-    width: wp('70%'),
-    borderRadius: 8,
-    paddingVertical: 12,
-    backgroundColor: '#3399FF',
-    marginTop: hp('27%')
-  },
   settingPad2: {
     width: wp('70%'),
     height: hp('6%'),
     borderRadius: 5,
     padding: 1,
-    // marginTop: hp('5%'),
     marginTop: hp('27%')
-  },
-  ContainerHeader: {
-    position: 'absolute',
-    marginLeft: 30,
-    marginTop: -hp('1.5%'),
-    color: 'white',
-    zIndex: 999,
-    backgroundColor: 'black'
   },
   innerGradient: {
     backgroundColor: '#000',

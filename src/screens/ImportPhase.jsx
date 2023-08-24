@@ -47,7 +47,7 @@ export default function ImportPhase({ navigation }) {
                 locations={[0, 0.048, 0.085, 0.1201, 0.19, 0.27, 0.37, 0.38, 0.78, 1]}
             >
                 <View style={styles.innerGradient2}>
-                    <TouchableOpacity style={{ position: 'absolute', marginLeft: wp('69%'), marginTop: 10 }}>
+                    <TouchableOpacity style={{ position: 'absolute', marginLeft: wp('65%'), marginTop: 10 }}>
                         <Text style={{ color: 'white' }}>PASTE</Text>
                     </TouchableOpacity>
                     <Text style={{ color: 'white' }}>Phrase</Text>
@@ -55,7 +55,7 @@ export default function ImportPhase({ navigation }) {
             </LinearGradient>
             <Text style={{ width: wp('85%'), color: 'white', marginVertical: hp('6%') }}>Typically 12 (sometimes 18, 24) words separated by single spaces</Text>
             <TouchableOpacity
-                onPress={() => navigation.navigate("WalletScreen")}
+                onPress={() => navigation.navigate("AddToken")}
             >
                 <LinearGradient
                     style={styles.importButton}

@@ -1,8 +1,7 @@
 
 import * as React from 'react';
-import { View, Text, StatusBar, TextInput } from 'react-native';
+import { View, Text, StatusBar } from 'react-native';
 import { StyleSheet } from 'react-native';
-import { TouchableOpacity } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import OTPInputView from '@twotalltotems/react-native-otp-input'
 
@@ -12,13 +11,16 @@ export default function Passcode({ navigation, route }) {
     return (
         <View style={styles.container}>
             <StatusBar hidden={true} />
-
-            <Text style={{ color: 'white', fontWeight: '500', fontSize: hp('2.4%'), marginTop: hp('20%') }}>Create Passcode</Text>
-            {/* <TextInput style={styles.passwordBox} secureTextEntry={true} /> */}
+            <Text
+                style={{ color: 'white', fontWeight: '500', fontSize: hp('2.4%'), marginTop: hp('20%') }}
+            >
+                Create Passcode
+            </Text>
             <OTPInputView
                 pinCount={6}
-                autofillFromClipboard={false}
-                autoFocusOnLoad
+                secureTextEntry={true}
+
+                // autoFocusOnLoad
                 codeInputFieldStyle={styles.underlineStyleBase}
                 onCodeFilled={(code) => {
                     console.log(`Code is ${code}`)
@@ -38,36 +40,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'black',
         alignItems: 'center'
-    },
-    alertMessage: {
-        flexDirection: 'row',
-        borderRadius: 8,
-        width: wp('90%'),
-        alignItems: 'center',
-        backgroundColor: 'brown',
-        paddingVertical: 8,
-        justifyContent: 'center',
-        marginTop: hp('3%'),
-    },
-    passwordBox: {
-        color: 'gray',
-        alignSelf: 'center',
-        width: wp('60%'),
-        marginVertical: hp('3%'),
-        textAlign: 'center',
-        borderRadius: 6,
-        backgroundColor: '#222',
-        paddingVertical: hp('0.5%')
-    },
-    buttonStyle: {
-        color: 'gray',
-        alignSelf: 'center',
-        width: wp('30%'),
-        marginVertical: hp('13%'),
-        textAlign: 'center',
-        borderRadius: 6,
-        backgroundColor: '#222',
-        paddingVertical: 8
     },
     underlineStyleBase: {
         width: 30,

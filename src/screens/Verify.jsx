@@ -1,4 +1,3 @@
-
 import { LinearGradient } from 'expo-linear-gradient';
 import * as React from 'react';
 import { View, Text, StatusBar } from 'react-native';
@@ -87,24 +86,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         alignItems: 'center'
     },
-    alertMessage: {
-        flexDirection: 'row',
-        borderRadius: 8,
-        width: wp('90%'),
-        alignItems: 'center',
-        backgroundColor: 'brown',
-        paddingVertical: 8,
-        justifyContent: 'center',
-        marginTop: hp('3%'),
-    },
-    linedBox: {
-        borderBottomColor: '#222',
-        borderBottomWidth: 1,
-        flexDirection: 'row',
-        width: wp('40%'),
-        paddingBottom: 6,
-        marginTop: 12
-    },
     dragItem: {
         borderRadius: 2,
         alignItems: 'center',
@@ -118,15 +99,6 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 12
     },
-    buttonStyle: {
-        width: wp('80%'),
-        paddingVertical: 8,
-        alignItems: 'center',
-        backgroundColor: 'gray',
-        position: 'absolute',
-        borderRadius: 8,
-        bottom: hp('9%')
-    },
     settingPad2: {
         position: 'absolute',
         alignItems: 'center',
@@ -136,14 +108,6 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         padding: 1,
         marginTop: hp('42%')
-    },
-    ContainerHeader: {
-        position: 'absolute',
-        marginLeft: 30,
-        marginTop: -hp('1.5%'),
-        color: 'white',
-        zIndex: 999,
-        backgroundColor: 'black'
     },
     innerGradient: {
         backgroundColor: '#000',
