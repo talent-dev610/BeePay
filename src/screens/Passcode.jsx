@@ -19,8 +19,7 @@ export default function Passcode({ navigation, route }) {
             <OTPInputView
                 pinCount={6}
                 secureTextEntry={true}
-
-                // autoFocusOnLoad
+                autoFocusOnLoad
                 codeInputFieldStyle={styles.underlineStyleBase}
                 onCodeFilled={(code) => {
                     console.log(`Code is ${code}`)
@@ -45,6 +44,6 @@ const styles = StyleSheet.create({
         width: 30,
         height: 45,
         borderWidth: 0,
-        borderBottomWidth: 1,
+        fontSize: 30
     },
 });

@@ -4,7 +4,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { Image } from 'react-native';
 import { TouchableOpacity } from 'react-native';
-
+import BottomNav from "../component/BottomNav";
 
 const BUSDImage = require("../../assets/BUSD.png");
 const BitcoinImage = require("../../assets/Bitcoin.png");
@@ -18,16 +18,6 @@ const labelImage = require("../../assets/label.png");
 const exchangeImage = require("../../assets/exchange.png");
 const uploadImage = require("../../assets/upload.png");
 const downloadImage = require("../../assets/download.png");
-const cameraImage = require("../../assets/camera.png");
-const infoImage = require("../../assets/info.png");
-const cobImage = require("../../assets/cob.png");
-
-const logoImage = require("../../assets/logo.png");
-const BeeIcon = require("../../assets/icon_1.png");
-const SwapIcon = require("../../assets/swap.png");
-const DiscoverIcon = require("../../assets/discover.png");
-const BrowserIcon = require("../../assets/browser.png");
-const SettingIcon = require("../../assets/settings.png");
 
 export default function WalletScreen({ navigation, route }) {
 
@@ -196,48 +186,7 @@ export default function WalletScreen({ navigation, route }) {
 
           </View>
 
-          {/* <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', width: wp('100%'), marginTop: 12, alignSelf: 'center' }}>
-            <TouchableOpacity style={{ flexDirection: 'column', alignItems: 'center' }}>
-              <Image source={logoImage} style={{ width: 20, height: 20 }} resizeMode='contain' />
-              <Text style={{ color: 'yellow', fontSize: 12 }}>Wallet</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={{ flexDirection: 'column', alignItems: 'center' }}>
-              <Image source={cameraImage} style={{ width: 20, height: 20 }} resizeMode='contain' />
-              <Text style={{ color: 'gray', fontSize: 12 }}>Live Cam</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={{ flexDirection: 'column', alignItems: 'center' }}>
-              <Image source={infoImage} style={{ width: 20, height: 20 }} resizeMode='contain' />
-              <Text style={{ color: 'gray', fontSize: 12 }}>Info</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={{ flexDirection: 'column', alignItems: 'center' }}>
-              <Image source={cobImage} style={{ width: 20, height: 20 }} resizeMode='contain' />
-              <Text style={{ color: 'gray', fontSize: 12 }}>Settings</Text>
-            </TouchableOpacity>
-          </View> */}
-
-          <View style={styles.bottomNav}>
-            <TouchableOpacity style={styles.tabItem}>
-              <Image source={BeeIcon} style={{ width: 30, height: 30 }} />
-              <Text style={{ color: '#BF8122' }}> Wallet</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.tabItem}>
-              <Image source={SwapIcon} style={{ width: 20, height: 20 }} />
-              <Text style={{ color: '#fff' }}> Swap</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.tabItem}>
-              <Image source={DiscoverIcon} style={{ width: 20, height: 20 }} />
-              <Text style={{ color: '#fff' }}> Discover</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.tabItem}>
-              <Image source={BrowserIcon} style={{ width: 20, height: 20 }} />
-              <Text style={{ color: '#fff' }}> Browser</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.tabItem}>
-              <Image source={SettingIcon} style={{ width: 20, height: 20 }} />
-              <Text style={{ color: '#fff' }}> Settings</Text>
-            </TouchableOpacity>
-          </View>
+          <BottomNav />
         </View>
       </LinearGradient>
     </View>
@@ -256,7 +205,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
-
   walletPad: {
     width: wp('100%'),
     height: hp('90%'),
@@ -300,23 +248,5 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: hp('3%'),
     height: hp('3%')
-  },
-  bottomNav: {
-    width: wp('100%'),
-    height: hp('10%'),
-    borderTopColor: '#BF8122',
-    borderTopWidth: 1,
-    marginTop: hp('56%'),
-    position: 'absolute',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: wp('5%'),
-    alignItems: 'flex-end',
-    paddingBottom: 10
-  },
-  tabItem: {
-    flexDirection: 'column',
-    alignItems: 'center',
   }
-
 })

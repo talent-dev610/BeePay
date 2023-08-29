@@ -78,10 +78,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#000',
         alignItems: 'center'
     },
-    logo: {
-        width: wp('14%'),
-        height: wp('14%'),
-    },
     settingPad: {
         width: wp('85%'),
         height: hp('19%'),
@@ -96,21 +92,6 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         padding: 1,
         marginTop: hp('5%')
-    },
-    custombutton: {
-        width: '100%',
-        paddingVertical: 10,
-        borderRadius: 8,
-        textAlign: 'center',
-        backgroundColor: 'black',
-        marginVertical: hp('1.6%')
-    },
-    imageBackgorund: {
-        flex: 1,
-        justifyContent: 'center',
-        width: wp('100%'),
-        height: hp('100%'),
-        position: 'absolute'
     },
     innerGradient: {
         backgroundColor: '#000',
@@ -129,37 +110,6 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         padding: wp('3%')
     },
-    circlePlus: {
-        width: 40,
-        height: 40,
-        borderRadius: 20,
-        padding: 2
-    },
-    innerCircle: {
-        width: '100%',
-        height: '100%',
-        borderRadius: 16,
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
-        alignItems: 'center'
-    },
-    bottomNav: {
-        width: wp('100%'),
-        height: hp('10%'),
-        borderTopColor: '#BF8122',
-        borderTopWidth: 1,
-        marginTop: hp('90%'),
-        position: 'absolute',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        paddingHorizontal: wp('5%'),
-        alignItems: 'flex-end',
-        paddingBottom: 10
-    },
-    tabItem: {
-        flexDirection: 'column',
-        alignItems: 'center',
-    },
     topNavContainer: {
         width: wp('100%'),
         height: hp('10%'),
@@ -167,14 +117,6 @@ const styles = StyleSheet.create({
         padding: wp('5%'),
         justifyContent: 'space-between',
         alignItems: 'flex-end'
-    },
-    transactionContainer: {
-        width: wp('80%'),
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        flexDirection: 'row',
-        marginTop: hp('2%'),
-        marginBottom: hp('4%')
     },
     ContainerHeader: {
         position: 'absolute',

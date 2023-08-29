@@ -42,7 +42,7 @@ export default function Dashboard({ navigation }) {
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate("WalletScreen")}>
+        <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate("AddToken")}>
           <Text style={styles.buttonText}>
             Stocks
           </Text>

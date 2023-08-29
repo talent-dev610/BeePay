@@ -43,9 +43,9 @@ export default function ReceiveBpay({ navigation }) {
                         end={[1, 0]}
                         locations={[0, 0.048, 0.085, 0.1201, 0.19, 0.27, 0.37, 0.38, 0.78, 1]}
                     >
-                        <View style={styles.innerCircle}>
+                        <TouchableOpacity style={styles.innerCircle}>
                             <Image source={copyIcon} />
-                        </View>
+                        </TouchableOpacity>
                     </LinearGradient>
                     <Text style={{ color: 'white' }}>Copy</Text>
                 </View>
@@ -57,9 +57,9 @@ export default function ReceiveBpay({ navigation }) {
                         end={[1, 0]}
                         locations={[0, 0.048, 0.085, 0.1201, 0.19, 0.27, 0.37, 0.38, 0.78, 1]}
                     >
-                        <View style={styles.innerCircle}>
+                        <TouchableOpacity style={styles.innerCircle}>
                             <Image source={labelIcon} />
-                        </View>
+                        </TouchableOpacity>
                     </LinearGradient>
                     <Text style={{ color: 'white' }}>Set Amount</Text>
                 </View>
@@ -71,9 +71,9 @@ export default function ReceiveBpay({ navigation }) {
                         end={[1, 0]}
                         locations={[0, 0.048, 0.085, 0.1201, 0.19, 0.27, 0.37, 0.38, 0.78, 1]}
                     >
-                        <View style={styles.innerCircle}>
+                        <TouchableOpacity style={styles.innerCircle}>
                             <Image source={shareIcon} />
-                        </View>
+                        </TouchableOpacity>
                     </LinearGradient>
                     <Text style={{ color: 'white' }}>Share</Text>
                 </View>
@@ -120,39 +120,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#000',
         alignItems: 'center'
     },
-    logo: {
-        width: wp('14%'),
-        height: wp('14%'),
-    },
     settingPad: {
         width: wp('85%'),
-        height: hp('10%'),
+        height: hp('13%'),
         alignItems: 'center',
         borderRadius: 5,
         padding: 1,
         marginTop: hp('2%')
-    },
-    settingPad2: {
-        width: wp('85%'),
-        height: hp('9%'),
-        borderRadius: 5,
-        padding: 1,
-        marginTop: hp('5%')
-    },
-    custombutton: {
-        width: '100%',
-        paddingVertical: 10,
-        borderRadius: 8,
-        textAlign: 'center',
-        backgroundColor: 'black',
-        marginVertical: hp('1.6%')
-    },
-    imageBackgorund: {
-        flex: 1,
-        justifyContent: 'center',
-        width: wp('100%'),
-        height: hp('100%'),
-        position: 'absolute'
     },
     innerGradient: {
         backgroundColor: '#000',
@@ -163,13 +137,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: wp('5%')
-    },
-    innerGradient2: {
-        backgroundColor: '#000',
-        width: '100%',
-        height: '100%',
-        borderRadius: 5,
-        padding: wp('3%')
     },
     circlePlus: {
         width: 40,
@@ -184,23 +151,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-evenly',
         alignItems: 'center'
-    },
-    bottomNav: {
-        width: wp('100%'),
-        height: hp('10%'),
-        borderTopColor: '#BF8122',
-        borderTopWidth: 1,
-        marginTop: hp('90%'),
-        position: 'absolute',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        paddingHorizontal: wp('5%'),
-        alignItems: 'flex-end',
-        paddingBottom: 10
-    },
-    tabItem: {
-        flexDirection: 'column',
-        alignItems: 'center',
     },
     topNavContainer: {
         width: wp('100%'),
@@ -218,19 +168,5 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         marginTop: hp('2%'),
         marginBottom: hp('4%')
-    },
-    importButton: {
-        width: wp('85%'),
-        height: hp('6%'),
-        borderRadius: 8,
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    bottomText: {
-        color: 'white',
-        position: 'absolute',
-        marginTop: hp('92%'),
-        fontSize: 18
     }
 });

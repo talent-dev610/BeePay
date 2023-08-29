@@ -7,7 +7,8 @@ import { TouchableOpacity } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { useState } from 'react';
 import { LinearGradient } from "expo-linear-gradient";
-
+import { TextInput } from 'react-native-gesture-handler';
+import BottomNav from "../component/BottomNav";
 
 const BeeIcon = require("../../assets/icon_1.png");
 const SwapIcon = require("../../assets/swap.png");
@@ -44,11 +45,28 @@ export default function SendBpay({ navigation }) {
                 end={[1, 0]}
                 locations={[0, 0.048, 0.085, 0.1201, 0.19, 0.27, 0.37, 0.38, 0.78, 1]}
             >
-                <View style={styles.innerGradient}>
-                    <Text style={{ color: 'white' }}>Address or name ENS, Bpay,...</Text>
-                    <Image source={minuseIcon} style={{ width: 20, height: 20 }} />
-                    <Text style={{ color: '#D98F26', fontSize: 17 }}>PASTE</Text>
-                </View>
+                <TextInput
+                    style={styles.innerGradient}
+                    placeholderTextColor="#555"
+                    placeholder="Address or name "
+                />
+                <TouchableOpacity
+                    style={{ position: 'absolute', backgroundColor: '#000', left: wp('50%'), top: hp('3%'), zIndex: 9999 }}
+                >
+                    <Image
+                        source={minuseIcon}
+                        style={{ width: 20, height: 20 }}
+                    />
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={{ position: 'absolute', backgroundColor: '#000', left: wp('65%'), top: hp('2.7%'), zIndex: 9999 }}
+                >
+                    <Text
+                        style={{ color: '#D98F26', fontSize: 17 }}
+                    >
+                        PASTE
+                    </Text>
+                </TouchableOpacity>
             </LinearGradient>
             <LinearGradient
                 style={styles.settingPad}
@@ -57,17 +75,27 @@ export default function SendBpay({ navigation }) {
                 end={[1, 0]}
                 locations={[0, 0.048, 0.085, 0.1201, 0.19, 0.27, 0.37, 0.38, 0.78, 1]}
             >
-                <View style={styles.innerGradient}>
-                    <Text style={{ color: 'white' }}>Amount Bpay</Text>
-                    <View style={{ flexDirection: 'row', gap: 30 }}>
-                        <Text style={{ color: '#D98F26', fontSize: 17 }}>MAX</Text>
-                        <Text style={{ color: '#D98F26', fontSize: 17 }}>PASTE</Text>
-                    </View>
-                </View>
+                <TextInput
+                    style={styles.innerGradient}
+                    placeholder="Amount Bpay"
+                    placeholderTextColor="#555"
+                />
+                <TouchableOpacity
+                    style={{ position: 'absolute', backgroundColor: '#000', left: wp('50%'), top: hp('3%'), zIndex: 9999 }}
+                >
+                    <Text
+                        style={{ color: '#D98F26', fontSize: 17 }}
+                    >
+                        MAX
+                    </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={{ position: 'absolute', backgroundColor: '#000', left: wp('65%'), top: hp('3%'), zIndex: 9999 }}
+                >
+                    <Text style={{ color: '#D98F26', fontSize: 17 }}>PASTE</Text>
+                </TouchableOpacity>
             </LinearGradient>
             <View>
-
-
                 <Text style={{ color: 'white', marginTop: hp('7%'), marginBottom: hp('2%') }}>OPTIONAL</Text>
                 <LinearGradient
                     style={styles.settingPad2}
@@ -76,38 +104,28 @@ export default function SendBpay({ navigation }) {
                     end={[1, 0]}
                     locations={[0, 0.048, 0.085, 0.1201, 0.19, 0.27, 0.37, 0.38, 0.78, 1]}
                 >
-                    <View style={styles.innerGradient}>
-                        <Text style={{ color: 'white' }}>Memo</Text>
-                        <View style={{ flexDirection: 'row', gap: 30, alignItems: 'center' }}>
-                            <Image source={minuseIcon} style={{ width: 20, height: 20 }} />
-                            <Image source={etherIcon} style={{ width: 28, height: 28 }} />
-                        </View>
-                    </View>
+                    <TextInput
+                        style={styles.innerGradient}
+                        placeholder="Memo"
+                        placeholderTextColor="#555"
+                    />
+                    <TouchableOpacity style={{ position: 'absolute', left: wp('55%'), top: hp('3%'), zIndex: 9999 }} >
+                        <Image
+                            source={minuseIcon}
+                            style={{ width: 20, height: 20 }}
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={{ position: 'absolute', left: wp('68%'), top: hp('2.2%'), zIndex: 9999 }}
+                    >
+                        <Image
+                            source={etherIcon}
+                            style={{ width: 28, height: 28 }}
+                        />
+                    </TouchableOpacity>
                 </LinearGradient>
             </View>
-
-            <View style={styles.bottomNav}>
-                <TouchableOpacity style={styles.tabItem}>
-                    <Image source={BeeIcon} style={{ width: 30, height: 30 }} />
-                    <Text style={{ color: '#BF8122' }}> Wallet</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.tabItem}>
-                    <Image source={SwapIcon} style={{ width: 20, height: 20 }} />
-                    <Text style={{ color: '#fff' }}> Swap</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.tabItem}>
-                    <Image source={DiscoverIcon} style={{ width: 20, height: 20 }} />
-                    <Text style={{ color: '#fff' }}> Discover</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.tabItem}>
-                    <Image source={BrowserIcon} style={{ width: 20, height: 20 }} />
-                    <Text style={{ color: '#fff' }}> Browser</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.tabItem}>
-                    <Image source={SettingIcon} style={{ width: 20, height: 20 }} />
-                    <Text style={{ color: '#fff' }}> Settings</Text>
-                </TouchableOpacity>
-            </View>
+            <BottomNav />
         </View>
     );
 }
@@ -117,11 +135,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#000',
         alignItems: 'center'
-    },
-    logo: {
-        width: wp('18%'),
-        height: wp('18%'),
-        marginTop: hp('13%'),
     },
     settingPad: {
         width: wp('85%'),
@@ -138,21 +151,6 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         padding: 1,
     },
-    custombutton: {
-        width: '100%',
-        paddingVertical: 10,
-        borderRadius: 8,
-        textAlign: 'center',
-        backgroundColor: 'black',
-        marginVertical: hp('1.6%')
-    },
-    imageBackgorund: {
-        flex: 1,
-        justifyContent: 'center',
-        width: wp('100%'),
-        height: hp('100%'),
-        position: 'absolute'
-    },
     innerGradient: {
         backgroundColor: '#000',
         width: '100%',
@@ -161,39 +159,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: wp('5%')
-    },
-    circlePlus: {
-        width: 40,
-        height: 40,
-        borderRadius: 20,
-        padding: 2
-    },
-    innerCircle: {
-        backgroundColor: '#000',
-        width: '100%',
-        height: '100%',
-        borderRadius: 16,
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
-        alignItems: 'center'
-    },
-    bottomNav: {
-        width: wp('100%'),
-        height: hp('10%'),
-        borderTopColor: '#BF8122',
-        borderTopWidth: 1,
-        marginTop: hp('90%'),
-        position: 'absolute',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        paddingHorizontal: wp('5%'),
-        alignItems: 'flex-end',
-        paddingBottom: 10
-    },
-    tabItem: {
-        flexDirection: 'column',
-        alignItems: 'center',
+        padding: wp('5%'),
+        color: 'white',
+        paddingRight: wp('30%')
     },
     topNavContainer: {
         width: wp('100%'),
